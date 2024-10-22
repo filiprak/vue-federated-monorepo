@@ -1,0 +1,9 @@
+{
+    "include": [
+        "packages/*/src/**/*"
+    ],
+    "compilerOptions": {
+        "isolatedModules": true,
+        "strict": true,
+    }
+}
