@@ -3,7 +3,22 @@
         "packages/*/src/**/*"
     ],
     "compilerOptions": {
+        "baseUrl": ".",
+        "strict": true,
         "isolatedModules": true,
-        "strict": true
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "paths": {
+            "@/utils/*": [
+                "packages/utils/src/*"
+            ],
+            "@/ui/*": [
+                "packages/ui/src/*"
+            ],
+            "@/webapp/*": [
+                "packages/webapp/src/*"
+            ]
+        }
     }
 }
