@@ -1,4 +1,5 @@
 import path from 'path';
+import federation from '@originjs/vite-plugin-federation';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -18,4 +19,9 @@ export default defineConfig({
             '@/webapp': path.resolve(__dirname, './packages/webapp/src'),
         }
     },
+    plugins: [
+        federation({
+
+        }),
+    ],
 });
