@@ -4,24 +4,40 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     build: {
+        minify: false,
         rollupOptions: {
             input: {
-                ui: 'packages/ui/src/index.ts',
-                utils: 'packages/utils/src/index.ts',
-                webapp: 'packages/webapp/src/index.ts',
+                webapp: 'packages/webapp/src/html/index.html',
             }
         },
+    },
+    server: {
+        open: 'packages/webapp/src/html/index.html',
     },
     resolve: {
         alias: {
             '@/utils': path.resolve(__dirname, './packages/utils/src'),
-            '@/ui': path.resolve(__dirname, './packages/ui/src'),
             '@/webapp': path.resolve(__dirname, './packages/webapp/src'),
         }
     },
     plugins: [
         federation({
-
+            name: '@/utils',
+            filename: 'utils.js',
+            exposes: {
+                './index': 'packages/utils/src/index.ts',
+            },
+            shared: ['vue']
+        }),
+        federation({
+            name: 'host',
+            remotes: {
+                '@/utils': {
+                    external: '/assets/utils.js',
+                    from: 'webpack',
+                }
+            },
+            shared: ['vue']
         }),
     ],
 });
