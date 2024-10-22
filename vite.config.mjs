@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     build: {
-        minify: true,
+        minify: false,
         rollupOptions: {
             input: {
                 webapp: 'packages/webapp/src/html/index.html',
