@@ -1,3 +1,7 @@
 import { button } from '@/ui/index';
 
-console.log('remote entry', button())
+console.log('remote entry')
+
+export function remote() {
+    return button();
+}

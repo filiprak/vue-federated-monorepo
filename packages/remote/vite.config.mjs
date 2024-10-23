@@ -6,11 +6,13 @@ import { defineConfig } from 'vite';
 export default defineConfig({
     build: {
         minify: false,
+        modulePreload: false,
+        cssCodeSplit: true,
         rollupOptions: {
-            input: {
-                remote: './src/index.ts',
+            output: {
+                minifyInternalExports: false,
             }
-        },
+        }
     },
     plugins: [
         federation({
@@ -26,15 +28,16 @@ export default defineConfig({
                     },
                     '@/utils/index': {
                         packagePath: './src/index.ts',
+                        import: false,
                         generate: false,
                     },
                     '@/ui/index': {
                         packagePath: './src/index.ts',
+                        import: false,
                         generate: false,
                     },
                 },
             ],
-            
         }),
 
         // helpers
