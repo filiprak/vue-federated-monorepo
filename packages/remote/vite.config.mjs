@@ -8,38 +8,33 @@ export default defineConfig({
         minify: false,
         rollupOptions: {
             input: {
-                webapp: './index.html',
+                remote: './src/index.ts',
             }
         },
     },
-    resolve: {
-        alias: {
-            '@/ui': path.resolve(__dirname, './packages/ui/src'),
-            '@/utils': path.resolve(__dirname, './packages/utils/src'),
-            '@/webapp': path.resolve(__dirname, './packages/webapp/src'),
-        }
-    },
     plugins: [
-        // host
         federation({
-            name: 'host',
-            remotes: {
-                '@/': {
-                    external: '/assets/remoteEntry.js',
-                    from: 'webpack',
-                },
+            name: 'remote',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './index': './src/index.ts',
             },
             shared: [
-                'vue',
                 {
+                    'vue': {
+                        generate: false
+                    },
                     '@/utils/index': {
-                        packagePath: './packages/utils/src/index.ts',
+                        packagePath: './src/index.ts',
+                        generate: false,
                     },
                     '@/ui/index': {
-                        packagePath: './packages/ui/src/index.ts',
+                        packagePath: './src/index.ts',
+                        generate: false,
                     },
                 },
-            ]
+            ],
+            
         }),
 
         // helpers

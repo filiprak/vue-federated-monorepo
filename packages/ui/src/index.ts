@@ -3,8 +3,6 @@ import { ref } from 'vue';
 
 const r = ref(5);
 
-export function button() {
-    console.log('button', random(24))
-    console.log('button', r)
-    return 'btn';
-}
+console.log('ui entry', random(24))
+
+export { button } from './components/Button';

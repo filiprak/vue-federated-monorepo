@@ -1,0 +1,12 @@
+{
+  "name": "remote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC"
+}
