@@ -43,7 +43,7 @@ export default defineConfig({
                     from: 'webpack',
                 },
             },
-            shared: ['vue']
+            shared: ['vue', '@/utils/index', '@/ui/index']
         }),
 
         // helpers
