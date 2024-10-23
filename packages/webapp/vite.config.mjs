@@ -15,9 +15,9 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            '@/ui': path.resolve(__dirname, './packages/ui/src'),
-            '@/utils': path.resolve(__dirname, './packages/utils/src'),
-            '@/webapp': path.resolve(__dirname, './packages/webapp/src'),
+            '@/ui': path.resolve(__dirname, '../ui/src'),
+            '@/utils': path.resolve(__dirname, '../utils/src'),
+            '@/webapp': path.resolve(__dirname, '../webapp/src'),
         }
     },
     plugins: [
@@ -35,10 +35,10 @@ export default defineConfig({
                 'vue',
                 {
                     '@/utils/index': {
-                        packagePath: './packages/utils/src/index.ts',
+                        packagePath: '../utils/src/index.ts',
                     },
                     '@/ui/index': {
-                        packagePath: './packages/ui/src/index.ts',
+                        packagePath: '../ui/src/index.ts',
                     },
                 },
             ]
