@@ -8,7 +8,7 @@ export default defineConfig({
         minify: false,
         rollupOptions: {
             input: {
-                webapp: 'packages/webapp/src/html/index.html',
+                webapp: './index.html',
             }
         },
     },
