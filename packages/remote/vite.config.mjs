@@ -9,6 +9,7 @@ export default defineConfig({
         modulePreload: false,
         cssCodeSplit: true,
         rollupOptions: {
+            external: ['@/utils/index', '@/ui/index'],
             output: {
                 minifyInternalExports: false,
             }
@@ -27,12 +28,12 @@ export default defineConfig({
                         generate: false
                     },
                     '@/utils/index': {
-                        packagePath: './src/index.ts',
+                        packagePath: './src/utils.ts',
                         import: false,
                         generate: false,
                     },
                     '@/ui/index': {
-                        packagePath: './src/index.ts',
+                        packagePath: './src/ui.ts',
                         import: false,
                         generate: false,
                     },
