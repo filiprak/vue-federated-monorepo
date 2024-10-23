@@ -2,7 +2,7 @@
   "name": "remote",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.ts",
   "devDependencies": {},
   "scripts": {
     "build": "vite build"

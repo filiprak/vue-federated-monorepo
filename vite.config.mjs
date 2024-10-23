@@ -9,7 +9,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 webapp: './index.html',
-            }
+            },
+            external: ['xyz/index'],
         },
     },
     resolve: {
@@ -23,9 +24,10 @@ export default defineConfig({
         // host
         federation({
             name: 'host',
+            filename: 'remoteEntry.js',
             remotes: {
-                '@/': {
-                    external: '/assets/remoteEntry.js',
+                xyz: {
+                    external: 'http://localhost:8080/assets/remoteEntry.js',
                     from: 'webpack',
                 },
             },

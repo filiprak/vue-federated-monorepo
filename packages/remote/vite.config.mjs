@@ -14,7 +14,7 @@ export default defineConfig({
     },
     plugins: [
         federation({
-            name: 'remote',
+            name: 'xyz',
             filename: 'remoteEntry.js',
             exposes: {
                 './index': './src/index.ts',
