@@ -12,21 +12,16 @@ const config: webpack.Configuration = {
         rules: [
             {
                 test: /\.ts$/,
-                use: [
-                    {
-                        loader: 'esbuild-loader',
-                        options: {
-                            target: 'esnext',
-                            tsconfig: './tsconfig.json',
-                        },
-                    },
-                ],
+                loader: 'esbuild-loader',
                 exclude: /node_modules/,
             },
         ],
     },
     plugins: [],
     resolve: {
+        extensions: [
+            '.ts'
+        ],
         alias: {
             '@/ui': path.resolve(__dirname, '../ui/src'),
             '@/utils': path.resolve(__dirname, '../utils/src'),
