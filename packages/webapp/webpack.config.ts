@@ -27,12 +27,15 @@ const config: webpack.Configuration = {
             
             shared: {
                 'vue': {
+                    singleton: true,
                     requiredVersion: '^3.0.0'
                 },
                 '@/ui/index': {
+                    singleton: true,
                     requiredVersion: '^1.0.0'
                 },
                 '@/utils/index': {
+                    singleton: true,
                     requiredVersion: '^1.0.0'
                 },
             },
