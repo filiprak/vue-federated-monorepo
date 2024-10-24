@@ -24,6 +24,7 @@
         "@types/webpack": "^5.28.5",
         "esbuild-loader": "^4.2.2",
         "esbuild-register": "^3.6.0",
+        "html-webpack-plugin": "^5.6.3",
         "typescript": "^5.6.3",
         "vite": "^5.4.9",
         "vite-plugin-top-level-await": "^1.4.4",

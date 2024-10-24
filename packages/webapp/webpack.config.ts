@@ -1,5 +1,6 @@
 import path from 'path';
-import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack, { container } from 'webpack';
 
 const config: webpack.Configuration = {
     entry: {
@@ -16,7 +17,27 @@ const config: webpack.Configuration = {
             },
         ],
     },
-    plugins: [],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './index-wp.html',
+            inject: 'body',
+        }),
+        new container.ModuleFederationPlugin({
+            name: 'webapp',
+            
+            shared: {
+                'vue': {
+                    requiredVersion: '^3.0.0'
+                },
+                '@/ui/index': {
+                    requiredVersion: '^1.0.0'
+                },
+                '@/utils/index': {
+                    requiredVersion: '^1.0.0'
+                },
+            },
+        })
+    ],
     resolve: {
         extensions: [
             '.ts',
