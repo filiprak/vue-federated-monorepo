@@ -13,14 +13,13 @@ const config: webpack.Configuration = {
             {
                 test: /\.ts$/,
                 loader: 'esbuild-loader',
-                exclude: /node_modules/,
             },
         ],
     },
     plugins: [],
     resolve: {
         extensions: [
-            '.ts'
+            '.ts',
         ],
         alias: {
             '@/ui': path.resolve(__dirname, '../ui/src'),
