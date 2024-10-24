@@ -9,6 +9,8 @@
         "target": "ESNext",
         "module": "ESNext",
         "moduleResolution": "Bundler",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "paths": {
             "@/utils/*": [
                 "packages/utils/src/*"
